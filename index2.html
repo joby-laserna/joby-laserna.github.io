@@ -13,49 +13,13 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(to bottom, #0a1128 0%, #1a2332 50%, #2d3e50 100%);
+            background: #0f1729;
             color: #e8dcc4;
             min-height: 100vh;
             line-height: 1.6;
             scroll-behavior: smooth;
             position: relative;
             overflow-x: hidden;
-        }
-
-        /* Forest silhouette layers */
-        body::before {
-            content: '';
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40%;
-            background: 
-                linear-gradient(to bottom, transparent 0%, rgba(10, 17, 40, 0.3) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="treeGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgb(15,20,35);stop-opacity:0.9" /><stop offset="100%" style="stop-color:rgb(20,25,40);stop-opacity:1" /></linearGradient></defs><polygon fill="url(%23treeGrad)" points="50,400 80,200 50,220 70,150 50,170 60,100 50,120 55,80 50,90 52,50 48,50 50,90 45,80 50,120 40,100 50,170 30,150 50,220 20,200 50,400"/><polygon fill="url(%23treeGrad)" points="150,400 175,180 155,200 170,130 155,150 163,90 155,110 159,70 155,80 157,40 153,40 155,80 151,70 155,110 147,90 155,150 140,130 155,200 135,180 155,400"/><polygon fill="url(%23treeGrad)" points="250,400 285,160 260,185 280,110 260,135 272,65 260,90 267,45 260,60 264,20 256,20 260,60 253,45 260,90 248,65 260,135 240,110 260,185 235,160 260,400"/><polygon fill="url(%23treeGrad)" points="380,400 405,190 385,210 400,140 385,160 393,100 385,120 389,80 385,90 387,50 383,50 385,90 381,80 385,120 377,100 385,160 370,140 385,210 365,190 385,400"/><polygon fill="url(%23treeGrad)" points="520,400 550,170 525,195 545,120 525,145 537,75 525,100 532,55 525,70 529,30 521,30 525,70 518,55 525,100 513,75 525,145 505,120 525,195 500,170 525,400"/><polygon fill="url(%23treeGrad)" points="680,400 715,185 690,210 710,135 690,160 702,90 690,115 697,70 690,85 694,45 686,45 690,85 683,70 690,115 678,90 690,160 670,135 690,210 665,185 690,400"/><polygon fill="url(%23treeGrad)" points="850,400 880,175 855,200 875,125 855,150 867,80 855,105 862,60 855,75 859,35 851,35 855,75 848,60 855,105 843,80 855,150 835,125 855,200 830,175 855,400"/><polygon fill="url(%23treeGrad)" points="1000,400 1030,165 1005,190 1025,115 1005,140 1017,70 1005,95 1012,50 1005,65 1009,25 1001,25 1005,65 998,50 1005,95 993,70 1005,140 985,115 1005,190 980,165 1005,400"/><polygon fill="url(%23treeGrad)" points="1150,400 1175,195 1155,215 1170,145 1155,165 1163,105 1155,125 1159,85 1155,95 1157,55 1153,55 1155,95 1151,85 1155,125 1147,105 1155,165 1140,145 1155,215 1135,195 1155,400"/></svg>');
-            background-size: cover;
-            background-position: bottom center;
-            background-repeat: no-repeat;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.7;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 25%;
-            background: 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><defs><linearGradient id="treeGrad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgb(8,12,25);stop-opacity:0.95" /><stop offset="100%" style="stop-color:rgb(10,15,30);stop-opacity:1" /></linearGradient></defs><polygon fill="url(%23treeGrad2)" points="100,300 125,140 105,160 120,90 105,110 113,50 105,70 109,30 105,40 107,10 103,10 105,40 101,30 105,70 97,50 105,110 90,90 105,160 85,140 105,300"/><polygon fill="url(%23treeGrad2)" points="300,300 330,130 305,155 325,80 305,105 317,40 305,65 312,20 305,35 309,5 301,5 305,35 298,20 305,65 293,40 305,105 285,80 305,155 280,130 305,300"/><polygon fill="url(%23treeGrad2)" points="500,300 535,125 510,150 530,75 510,100 522,35 510,60 517,15 510,30 514,0 506,0 510,30 503,15 510,60 498,35 510,100 490,75 510,150 485,125 510,300"/><polygon fill="url(%23treeGrad2)" points="730,300 760,135 735,160 755,85 735,110 747,45 735,70 742,25 735,40 739,10 731,10 735,40 728,25 735,70 723,45 735,110 715,85 735,160 710,135 735,300"/><polygon fill="url(%23treeGrad2)" points="950,300 985,120 960,145 980,70 960,95 972,30 960,55 967,10 960,25 964,0 956,0 960,25 953,10 960,55 948,30 960,95 940,70 960,145 935,120 960,300"/><polygon fill="url(%23treeGrad2)" points="1100,300 1130,145 1105,170 1125,95 1105,120 1117,55 1105,80 1112,35 1105,50 1109,20 1101,20 1105,50 1098,35 1105,80 1093,55 1105,120 1085,95 1105,170 1080,145 1105,300"/></svg>');
-            background-size: cover;
-            background-position: bottom center;
-            background-repeat: no-repeat;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0.85;
         }
 
         header {
@@ -561,13 +525,23 @@
             </div>
         </section>
 
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Let's connect! Reach out to me through:</p>
+                <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p><a href="https://github.com/yourusername" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+            </div>
+        </section>
+    </div>
+
     <footer>
         <div class="social-links">
-            <a href="mailto:jmrl.contact@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/jobo-robo" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="www.linkedin.com/in/jose-laserna" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p>&copy; 2026 Jose Laserna. Designed and Built with ❤︎.</p>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
 
     <!-- Scroll to top button -->
