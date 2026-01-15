@@ -155,6 +155,45 @@
             margin-bottom: 1rem;
         }
 
+        .featured-project {
+            grid-column: 1 / -1;
+        }
+
+        .project-image {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid rgba(139, 172, 136, 0.3);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(139, 172, 136, 0.3);
+            color: #a8d5a4;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(139, 172, 136, 0.4);
+        }
+
         .contact-info {
             text-align: center;
             font-size: 1.2rem;
@@ -250,9 +289,19 @@
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Project One</h3>
-                    <p>Description of your first project goes here. What did you build? What technologies did you use?</p>
+                <div class="project-card featured-project">
+                    <h3>Cybersecurity Challenges in Large Software Scale Projects (LSSC Framework)</h3>
+                    <div class="project-image">
+                        <img src="lssc-framework-poster.jpg" alt="LSSC Framework Research Poster">
+                    </div>
+                    <p>As a final year project, my team finished working on an R&D project focused on literature to create a practical cybersecurity framework for software projects that would be used throughout the SDLC cycle while also catering to 70,000+ users.</p>
+                    <p>This project integrates security early in the development of software projects and involved collaboration with clients, mentors, and project team members through meetings and emails.</p>
+                    <div class="project-tags">
+                        <span class="tag">Cybersecurity</span>
+                        <span class="tag">SDLC</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Framework Development</span>
+                    </div>
                 </div>
                 <div class="project-card">
                     <h3>Project Two</h3>
