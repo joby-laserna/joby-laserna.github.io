@@ -1,144 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: #0f1729;
-            color: #e8dcc4;
-            min-height: 100vh;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        header {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 2px solid rgba(139, 172, 136, 0.3);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            height: 80px;
-            width: auto;
-            margin-right: auto;
-            transition: transform 0.3s ease;
-            background: transparent;
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
-        }
-
-        .logo:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: #d4c5a9;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem;
-        }
-
-        nav a:hover {
-            color: #8bac88;
-            transform: translateY(-2px);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: #8bac88;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 80%;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        section {
-            margin-bottom: 5rem;
-            background: rgba(26, 35, 50, 0.6);
-            padding: 3rem;
-            border-radius: 15px;
-            border: 1px solid rgba(139, 172, 136, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #f4e8d0;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #8bac88;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid rgba(139, 172, 136, 0.3);
-            padding-bottom: 0.5rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #d4c5a9;
-            margin-bottom: 1rem;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 5rem 2rem;
-            background: rgba(10, 17, 40, 0.4);
-        }
-
-        .skills-grid {
+/* .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
@@ -158,438 +18,79 @@
             box-shadow: 0 5px 20px rgba(139, 172, 136, 0.2);
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: rgba(45, 62, 80, 0.5);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(139, 172, 136, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(139, 172, 136, 0.3);
-        }
-
-        .project-card h3 {
-            color: #f4e8d0;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .project-card p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .featured-project {
-            grid-column: 1 / -1;
-        }
-
-        .project-image {
-            width: 100%;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 2px solid rgba(139, 172, 136, 0.3);
-        }
-
-        .project-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .project-image img:hover {
-            transform: scale(1.02);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            background: rgba(139, 172, 136, 0.3);
-            color: #a8d5a4;
-            padding: 0.4rem 0.8rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(139, 172, 136, 0.4);
-        }
-
-        .contact-info {
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        .contact-info a {
-            color: #8bac88;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #a8d5a4;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(15, 23, 42, 0.8);
-            color: #a39f93;
-            border-top: 2px solid rgba(139, 172, 136, 0.3);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1.5rem 0;
-        }
-
-        .social-links a {
-            color: #d4c5a9;
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #8bac88;
-            transform: translateY(-5px);
-        }
-
-        /* Scroll to top button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: rgba(139, 172, 136, 0.8);
-            color: #0a1128;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #8bac88;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            transition: all 0.3s ease;
-        }
-
-        .scroll-to-top.visible {
-            display: flex;
-        }
-
-        .scroll-to-top:hover {
-            background: #8bac88;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139, 172, 136, 0.4);
-        }
-
-        /* Resume button */
-        .resume-btn {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 1.8rem;
-            background: rgba(139, 172, 136, 0.2);
-            color: #8bac88;
-            border: 2px solid #8bac88;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .resume-btn:hover {
-            background: #8bac88;
-            color: #0a1128;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139, 172, 136, 0.3);
-        }
-
-        /* Experience timeline */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 3px solid rgba(139, 172, 136, 0.3);
-            margin-top: 2rem;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-left: 1.5rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.6rem;
-            top: 0.3rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #8bac88;
-            border: 3px solid #0a1128;
-            box-shadow: 0 0 10px rgba(139, 172, 136, 0.5);
-        }
-
-        .timeline-item h3 {
+        .skill-item h3 {
             color: #f4e8d0;
             font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .timeline-item .company {
-            color: #8bac88;
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
+        .skill-item ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .timeline-item .period {
-            color: #a39f93;
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 0.8rem;
-        }
-
-        .timeline-item p {
+        .skill-item li {
             color: #d4c5a9;
-            line-height: 1.7;
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
         }
 
-        /* Decorative stars */
-        .stars {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .star {
+        .skill-item li::before {
+            content: '•';
+            color: #8bac88;
+            font-weight: bold;
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #fff;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: twinkle 3s infinite;
-        }
+            left: 0;
+        } */
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-    </style>
-</head>
-<body>
-    <div class="stars" id="stars"></div>
 
-    <header>
-        <nav>
-            <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/fireplace.gif" alt="Cozy Fireplace" class="logo">
-            <div class="nav-links">
-                <a href="#about">About Me</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container" style="position: relative; z-index: 10;">
-        <div class="hero">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Exploring the digital forest, one project at a time</p>
-        </div>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm passionate about creating meaningful digital experiences. This is where I share my journey through code, creativity, and continuous learning.</p>
-            <p>Add your personal story here...</p>
-        </section>
 
         <section id="skills">
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-item">
-                    <h3>HTML & CSS</h3>
-                    <p>Building responsive web interfaces</p>
-                </div>
-                <div class="skill-item">
-                    <h3>JavaScript</h3>
-                    <p>Interactive web applications</p>
+                    <h3>Systems & Cloud</h3>
+                    <ul>
+                        <li>Windows & Linux</li>
+                        <li>Active Directory, Entra ID (Azure AD)</li>
+                        <li>Microsoft 365, Intune, Autopilot</li>
+                        <li>Hyper-V, Windows Server</li>
+                    </ul>
                 </div>
                 <div class="skill-item">
                     <h3>Networking</h3>
-                    <p>Network configuration and administration</p>
+                    <ul>
+                        <li>TCP/IP, DNS, DHCP</li>
+                        <li>VLANs, VPNs</li>
+                        <li>Routing & Switching</li>
+                        <li>Cisco IOS</li>
+                    </ul>
                 </div>
                 <div class="skill-item">
-                    <h3>Cybersecurity</h3>
-                    <p>Security frameworks and best practices</p>
+                    <h3>Security</h3>
+                    <ul>
+                        <li>ACLs, Firewalls, Network Hardening</li>
+                        <li>IDS/IPS, Nmap</li>
+                        <li>SIEM Monitoring (Guardz)</li>
+                    </ul>
                 </div>
                 <div class="skill-item">
-                    <h3>PowerShell</h3>
-                    <p>Automation and scripting</p>
+                    <h3>Scripting & Automation</h3>
+                    <ul>
+                        <li>PowerShell</li>
+                        <li>Python</li>
+                        <li>Bash</li>
+                        <li>SQL</li>
+                    </ul>
                 </div>
                 <div class="skill-item">
-                    <h3>Java</h3>
-                    <p>Application development</p>
+                    <h3>Development</h3>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Java</li>
+                        <li>GitHub</li>
+                    </ul>
                 </div>
             </div>
         </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Your Job Title</h3>
-                    <div class="company">Company Name</div>
-                    <div class="period">Month Year - Present</div>
-                    <p>Describe your key responsibilities and achievements in this role. What did you accomplish? What technologies did you work with?</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Previous Job Title</h3>
-                    <div class="company">Previous Company</div>
-                    <div class="period">Month Year - Month Year</div>
-                    <p>Detail your contributions and the impact you made in this position. Highlight specific projects or initiatives you led or participated in.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Earlier Position</h3>
-                    <div class="company">Another Company</div>
-                    <div class="period">Month Year - Month Year</div>
-                    <p>Share your experience and the skills you developed during this time. Focus on achievements that are relevant to your career goals.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card featured-project">
-                    <h3>Cybersecurity Challenges in Large Software Scale Projects (LSSC Framework)</h3>
-                    <div class="project-image">
-                        <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/lssc-framework-poster.png" alt="LSSC Framework Research Poster">
-                    </div>
-                    <p>As a final year project, my team finished working on an R&D project focused on literature to create a practical cybersecurity framework for software projects that would be used throughout the SDLC cycle while also catering to 70,000+ users.</p>
-                    <p>This project integrates security early in the development of software projects and involved collaboration with clients, mentors, and project team members through meetings and emails.</p>
-                    <div class="project-tags">
-                        <span class="tag">Cybersecurity</span>
-                        <span class="tag">SDLC</span>
-                        <span class="tag">Research</span>
-                        <span class="tag">Framework Development</span>
-                    </div>
-                </div>
-                <div class="project-card featured-project">
-                    <h3>Service Desk System (Pick IT Up)</h3>
-                    <div class="project-image">
-                        <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/pickitup.png" alt="Pick IT Up Service Desk System">
-                    </div>
-                    <p>In this project my partner and I were asked to program a service desk system. This involved the use of Java and GitHub. The system included user account creation with secure login and logout functionality.</p>
-                    <p>It provided a visual interface to view tickets from a Derby database, along with filtering and status updates (Open, Closed, In-Review). The platform also supported different account types, including IT staff and Guest users.</p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Derby Database</span>
-                        <span class="tag">GitHub</span>
-                        <span class="tag">GUI Development</span>
-                    </div>
-                </div>
-                <div class="project-card featured-project">
-                    <h3>Campbell and Starr Bakers' Network</h3>
-                    <p>Based on a case study, my team and I were appointed to design and implement a robust network that meets the requirements of the business owners. In this project, I configured network devices of the virtual network, including the servers and the PC hosts.</p>
-                    <p>Together we installed the Active Directory, the DNS, and DHCP server. We also made IP configurations and wrote a PowerShell script to automate the creation of new AD users and assign their permissions.</p>
-                    <div class="project-tags">
-                        <span class="tag">Network Design</span>
-                        <span class="tag">Active Directory</span>
-                        <span class="tag">PowerShell</span>
-                        <span class="tag">DNS/DHCP</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p>Let's connect! Reach out to me through:</p>
-                <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                <p><a href="https://github.com/yourusername" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="social-links">
-            <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-    </footer>
-
-    <!-- Scroll to top button -->
-    <button class="scroll-to-top" id="scrollToTopBtn" title="Go to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <script>
-        // Generate random stars
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.animationDelay = Math.random() * 3 + 's';
-            starsContainer.appendChild(star);
-        }
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // Scroll to top button functionality
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
-</body>
-</html>
