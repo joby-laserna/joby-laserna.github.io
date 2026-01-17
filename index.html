@@ -140,14 +140,14 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .skill-item {
             background: rgba(45, 62, 80, 0.5);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             border: 1px solid rgba(139, 172, 136, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -159,29 +159,39 @@
         }
 
         .skill-item h3 {
-            color: #f4e8d0;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .skill-item li {
-            color: #d4c5a9;
-            padding: 0.3rem 0;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-
-        .skill-item li::before {
-            content: '•';
             color: #8bac88;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-item h3::before {
+            content: '⚡';
+            font-size: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(139, 172, 136, 0.2);
+            color: #d4c5a9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(139, 172, 136, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(139, 172, 136, 0.3);
+            border-color: #8bac88;
+            transform: translateY(-2px);
         }
 
         .projects-grid {
@@ -232,6 +242,33 @@
             height: auto;
             display: block;
             transition: transform 0.3s ease;
+        }
+
+        .project-images-dual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .project-images-dual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            border: 2px solid rgba(139, 172, 136, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .project-images-dual img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Make images stack on mobile */
+        @media (max-width: 768px) {
+            .project-images-dual {
+                grid-template-columns: 1fr;
+            }
         }
 
         .project-image img:hover {
@@ -458,46 +495,59 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <h3>Systems & Cloud</h3>
-                    <ul>
-                        <li>Windows & Linux</li>
-                        <li>Active Directory, Entra ID (Azure AD)</li>
-                        <li>Microsoft 365, Intune, Autopilot</li>
-                        <li>Hyper-V, Windows Server</li>
-                    </ul>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Windows & Linux</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">Entra ID (Azure AD)</span>
+                        <span class="skill-tag">Microsoft 365</span>
+                        <span class="skill-tag">Intune</span>
+                        <span class="skill-tag">Autopilot</span>
+                        <span class="skill-tag">Hyper-V</span>
+                        <span class="skill-tag">Windows Server</span>
+                    </div>
                 </div>
                 <div class="skill-item">
                     <h3>Networking</h3>
-                    <ul>
-                        <li>TCP/IP, DNS, DHCP</li>
-                        <li>VLANs, VPNs</li>
-                        <li>Routing & Switching</li>
-                        <li>Cisco IOS</li>
-                    </ul>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TCP/IP</span>
+                        <span class="skill-tag">DNS</span>
+                        <span class="skill-tag">DHCP</span>
+                        <span class="skill-tag">VLANs</span>
+                        <span class="skill-tag">VPNs</span>
+                        <span class="skill-tag">Routing & Switching</span>
+                        <span class="skill-tag">Cisco IOS</span>
+                    </div>
                 </div>
                 <div class="skill-item">
                     <h3>Security</h3>
-                    <ul>
-                        <li>ACLs, Firewalls, Network Hardening</li>
-                        <li>IDS/IPS, Nmap</li>
-                        <li>SIEM Monitoring (Guardz)</li>
-                    </ul>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ACLs</span>
+                        <span class="skill-tag">Firewalls</span>
+                        <span class="skill-tag">Network Hardening</span>
+                        <span class="skill-tag">IDS/IPS</span>
+                        <span class="skill-tag">Nmap</span>
+                        <span class="skill-tag">SIEM Monitoring</span>
+                        <span class="skill-tag">Guardz</span>
+                    </div>
                 </div>
                 <div class="skill-item">
                     <h3>Scripting & Automation</h3>
-                    <ul>
-                        <li>PowerShell</li>
-                        <li>Python</li>
-                        <li>Bash</li>
-                        <li>SQL</li>
-                    </ul>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
                 </div>
                 <div class="skill-item">
                     <h3>Development</h3>
-                    <ul>
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>Java</li>
-                        <li>GitHub</li>
-                    </ul>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">GitHub</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -532,7 +582,7 @@
                 <div class="project-card featured-project">
                     <h3>Campbell and Starr Bakers' Network</h3>
                     <div class="project-image">
-                        <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/snetwork.png" alt="Visio Image">
+                        <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/network.png" alt="Visio Image">
                     </div>
                     <p>Windows Server | Active Directory | DNS/DHCP | PowerShell</p>
                     <p>Designed and deployed a virtual business network with automated user provisioning and secure identity management.</p>
@@ -543,12 +593,12 @@
                         <span class="tag">DNS/DHCP</span>
                     </div>
                 </div>
-                <div class="project-card featured-project">
-                    <h3>PowerShell Automation & Security Hardening</h3>
-                    <div class="project-image">
-                        <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/devicesecurity.png" alt="Device Security">
-                        <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/cloudsecurity.png" alt="Cloud Security">
-                    </div>
+                    <div class="project-card featured-project">
+                        <h3>PowerShell Automation & Security Hardening</h3>
+                        <div class="project-images-dual">
+                            <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/devicesecurity.png" alt="Device Security">
+                            <img src="https://raw.githubusercontent.com/jobo-robo/jobo-robo.github.io/main/cloudsecurity.png" alt="Cloud Security">
+                        </div>
                     <p>PowerShell | Intune | Entra ID | Microsoft 365</p>
                     <p>Automated device provisioning and security hardening, significantly reducing manual setup time and configuration errors.</p>
                     <div class="project-tags">
