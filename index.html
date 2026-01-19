@@ -22,6 +22,7 @@
             overflow-x: hidden;
         }
 
+        /* ===== HEADER & NAVIGATION ===== */
         header {
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
@@ -94,6 +95,7 @@
             width: 80%;
         }
 
+        /* ===== LAYOUT ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -111,6 +113,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
+        /* ===== TYPOGRAPHY ===== */
         h1 {
             font-size: 3rem;
             color: #f4e8d0;
@@ -132,12 +135,14 @@
             margin-bottom: 1rem;
         }
 
+        /* ===== HERO SECTION ===== */
         .hero {
             text-align: center;
             padding: 5rem 2rem;
             background: rgba(10, 17, 40, 0.4);
         }
 
+        /* ===== SKILLS SECTION ===== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -201,6 +206,7 @@
             margin-top: 2rem;
         }
 
+        /* ===== PROJECTS SECTION ===== */
         .project-card {
             background: rgba(45, 62, 80, 0.5);
             padding: 2rem;
@@ -306,6 +312,7 @@
             color: #a8d5a4;
         }
 
+        /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding: 2rem;
@@ -362,7 +369,7 @@
             box-shadow: 0 5px 15px rgba(139, 172, 136, 0.4);
         }
 
-        /* Resume button */
+        /* ===== BUTTONS ===== */
         .resume-btn {
             display: inline-block;
             margin-top: 1.5rem;
@@ -384,7 +391,7 @@
             box-shadow: 0 5px 15px rgba(139, 172, 136, 0.3);
         }
 
-        /* Experience timeline */
+        /* ===== EXPERIENCE TIMELINE ===== */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -435,7 +442,7 @@
             line-height: 1.7;
         }
 
-        /* Decorative stars */
+        /* ===== DECORATIVE ELEMENTS ===== */
         .stars {
             position: fixed;
             width: 100%;
@@ -479,12 +486,15 @@
         </nav>
     </header>
 
+    <!-- Main Content -->
     <div class="container" style="position: relative; z-index: 10;">
         <div class="hero">
+            <!-- Hero Section -->
             <h1>Joby Laserna</h1>
             <p>Aspiring System Administrator | IT Support Technician | Networking and Cybersecurity Graduate </p>
         </div>
 
+        <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
             <p>I’m a curious and enthusiastic Networks and Cybersecurity graduate from AUT with a keen passion for innovation and practical tech solutions. 
@@ -492,7 +502,10 @@
             <div style="text-align: center;">
             <a href="https://github.com/joby-laserna/joby-laserna.github.io/blob/main/Joby%20Laserna%20-%20CV.pdf" target="_blank" class="resume-btn">View My Resume</a>
         </section>
-            <section id="skills">
+
+
+        <!-- Skills Section -->
+        <section id="skills">
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-item">
@@ -556,6 +569,7 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
         <section id="experience">
             <h2>Experience</h2>
             <div class="timeline">
@@ -581,6 +595,7 @@
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-grid">
@@ -643,6 +658,7 @@
             </div>
         </section>
         
+        <!-- Footer -->
         <footer>
             <div class="social-links">
                 <a href="mailto:jmrl.contact@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
@@ -661,6 +677,7 @@
         <!-- Font Awesome for social icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+        <!-- JavaScript -->
         <script>
             // Generate random stars
             const starsContainer = document.getElementById('stars');
