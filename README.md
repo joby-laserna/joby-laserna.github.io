@@ -1,1 +1,1 @@
-Hey there 👋
+This is my GitHub portfolio where I can share my tech journey and projects. There aren’t a lot of projects here yet, but I’m constantly learning and adding new work to showcase my skills. I hope you enjoy exploring it as much as I enjoyed creating it.   
