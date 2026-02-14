@@ -370,7 +370,7 @@
         }
 
         /* ===== BUTTONS ===== */
-        .resume-btn {
+        .clickable-btn {
             display: inline-block;
             margin-top: 1.5rem;
             padding: 0.8rem 1.8rem;
@@ -384,11 +384,12 @@
             transition: all 0.3s ease;
         }
 
-        .resume-btn:hover {
+         .clickable-btn:hover {
             background: #8bac88;
             color: #0a1128;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(139, 172, 136, 0.3);
+
         }
 
         /* ===== EXPERIENCE TIMELINE ===== */
@@ -500,7 +501,7 @@
             <p>I’m a curious and enthusiastic Networks and Cybersecurity graduate from AUT with a keen passion for innovation and practical tech solutions. 
                 I thrive on learning new skills, exploring new technologies, and taking on challenges that push me to grow professionally and personally.</p>
             <div style="text-align: center;">
-            <a href="Joby Laserna - CV.pdf" target="_blank" class="resume-btn">View My Resume</a>
+            <a href="Joby Laserna - CV.pdf" target="_blank" class="clickable-btn">View My Resume</a>
         </section>
 
 
@@ -626,7 +627,11 @@
                         <span class="tag">Security</span>
                         <span class="tag">Automation</span>
                     </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="Projects/Device Security PowerShell Automation.pdf" target="_blank" class="resume-btn">Device Security PDF</a>
+                        <a href="Projects/Cloud Security PowerShell Automation.pdf" target="_blank" class="resume-btn">Cloud Security PDF</a>
                 </div>
+            </div>
                 <div class="project-card featured-project">
                     <h3>Cybersecurity Challenges in Large Software Scale Projects (LSSC Framework)</h3>
                     <div class="project-image">
